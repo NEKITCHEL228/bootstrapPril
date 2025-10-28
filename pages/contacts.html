@@ -4,67 +4,152 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Семестровая работа</title>
-    <link rel="stylesheet" href="../style/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
     <link rel="stylesheet" href="../style/modal.css" />
   </head>
 
-  <body>
-    <div class="page-container">
-      <header class="header">
-        <h1 class="header-title">Заголовок</h1>
-    </header>
-      <nav class="nav">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Главная</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="news.html">Новости</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="practices.html">Практики</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="goods.html">Товары</a>
-          </li>
-          <li class="nav-item nav-item--active">
-            <a class="nav-link" href="contacts.html">Контакты</a>
-          </li>
-        </ul>
+  <body class="d-flex flex-column min-vh-100 bg-light">
+    <div class="container-fluid p-0 flex-grow-1">
+      <!-- Header -->
+      <header class="bg-primary text-white py-4">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col">
+              <h1 class="h3 mb-1">Мой Портфолио</h1>
+              <p class="mb-0 opacity-75">Студент разработчик</p>
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-light text-primary">ЭФБО-01-24</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                  <i class="bi bi-house me-1"></i>Главная
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/news.html">
+                  <i class="bi bi-newspaper me-1"></i>Новости
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/practices.html">
+                  <i class="bi bi-code-slash me-1"></i>Практики
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/goods.html">
+                  <i class="bi bi-cart me-1"></i>Товары
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="../pages/contacts.html">
+                  <i class="bi bi-telephone me-1"></i>Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
 
-      <main class="content">
-        <section class="contacts-container">
-          <h2 class="section-title">Контакты</h2>
-          <article class="contact-info">
-            <h3>Электронная почта</h3>
-            <p>primerpochty@mail.ru</p>
-          </article>
+      <main class="container">
+        <section class="card my-4">
+          <figure class="text-center">
+            <h1 class="my-2 fw-bold">Контакты</h1>
+          </figure>
 
-          <article class="contact-info">
-            <h3>Адрес</h3>
-            <p>Анонимность в интернете в наше время очень важна...</p>
-          </article>
+          <div class="d-flex flex-column align-items-center">
+            <div class="mb-3">
+              <div class="text-center">
+                <h3>Электронная почта</h3>
+                <p>primerpochty@mail.ru</p>
+              </div>
+            </div>
 
-          <button class="contacts-button" onclick="contactModal.showModal()">
-            Связаться с нами
-          </button>
+            <div class="mb-3">
+              <div class="text-center">
+                <h3>Адрес</h3>
+                <p>Анонимность в интернете в наше время очень важна...</p>
+              </div>
+            </div>
+
+            <button
+              class="btn btn-primary mb-3"
+              onclick="contactModal.showModal()"
+            >
+              Связаться с нами
+            </button>
+          </div>
         </section>
       </main>
     </div>
-    <footer class="footer">Футер</footer>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0">
+              &copy; 2025 Портфолио студента. Все права защищены.
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a
+              href="../pages/contacts.html"
+              class="text-white text-decoration-none me-3"
+              >Контакты</a
+            >
+            <a href="#" class="text-white text-decoration-none"
+              >Политика конфиденциальности</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <dialog id="contactModal">
-      <div class="modal-header">
-        <h2>Форма обратной связи</h2>
+      <div
+        class="text-center text-white bg-dark py-3 d-flex align-items-center justify-content-center"
+      >
+        <div>
+          <h2>Форма обратной связи</h2>
+        </div>
       </div>
 
       <div class="modal-content">
         <form id="feedbackForm" method="dialog">
-          <div class="form-group">
-            <label for="name">Имя <span class="required">*</span></label>
+          <div class="mb-3 d-flex flex-column">
+            <label for="name" class="form-label lh-lg"
+              >Имя <span class="required">*</span></label
+            >
             <input
               type="text"
+              class="form-control"
               id="name"
               name="name"
               required
@@ -72,10 +157,13 @@
             />
           </div>
 
-          <div class="form-group">
-            <label for="phone">Телефон <span class="required">*</span></label>
+          <div class="mb-3 d-flex flex-column">
+            <label for="phone" class="form-label lh-lg"
+              >Телефон <span class="required">*</span></label
+            >
             <input
               type="tel"
+              class="form-control"
               id="phone"
               name="phone"
               required
@@ -83,12 +171,13 @@
             />
           </div>
 
-          <div class="form-group">
-            <label for="email"
+          <div class="mb-3 d-flex flex-column">
+            <label for="email" class="form-label lh-lg"
               >Электронная почта <span class="required">*</span></label
             >
             <input
               type="email"
+              class="form-control"
               id="email"
               name="email"
               required
@@ -96,11 +185,11 @@
             />
           </div>
 
-          <div class="form-group">
-            <label for="category"
+          <div class="mb-3 d-flex flex-column">
+            <label for="category" class="form-label lh-lg"
               >Категория обращения <span class="required">*</span></label
             >
-            <select id="category" name="category" required>
+            <select class="form-select" id="category" name="category" required>
               <option value="">Выберите категорию</option>
               <option value="technical">Техническая поддержка</option>
               <option value="commercial">Коммерческое предложение</option>
@@ -111,21 +200,28 @@
             </select>
           </div>
 
-          <div class="form-group">
-            <label for="message"
+          <div class="mb-3 d-flex flex-column">
+            <label for="message" class="form-label"
               >Текст обращения <span class="required">*</span></label
             >
             <textarea
               id="message"
+              class="form-control"
               name="message"
               required
               placeholder="Опишите вашу проблему или вопрос..."
             ></textarea>
           </div>
 
-          <div class="modal-actions">
+          <div class="d-flex flex-row justify-content-end">
             <!-- Кнопка отмены с автоматическим закрытием через form method="dialog" -->
-            <button type="button" class="btn btn-secondary" onclick="contactModal.close()">Отмена</button>
+            <button
+              type="button"
+              class="btn btn-secondary me-2"
+              onclick="contactModal.close()"
+            >
+              Отмена
+            </button>
             <!-- Кнопка отправки с обработкой через JavaScript -->
             <button
               type="submit"
@@ -136,7 +232,7 @@
             </button>
           </div>
         </form>
-      </div> 
+      </div>
     </dialog>
 
     <script src="../contactModal.js"></script>
